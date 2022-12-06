@@ -102,6 +102,6 @@ priorities of those item types?
 
 ### Solution
 
-Answer: 
+Answer: 2650
 
-
+That's the right answer! You are one gold star closer to collecting enough star fruit.
