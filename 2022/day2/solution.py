@@ -1,41 +1,41 @@
-left_key = {
+LEFT_KEY = {
     'A': 'rock',
     'B': 'paper',
     'C': 'scissors'
 }
 
-right_key = {
+RIGHT_KEY = {
     'X': 'rock',
     'Y': 'paper',
     'Z': 'scissors'
 }
 
 
-win_score = {
+WIN_SCORE = {
     'win': 6,
     'draw': 3,
     'loss': 0
 }
 
-play_score = {
+MOVE_SCORE = {
     'rock': 1,
     'paper': 2,
     'scissors': 3
 }
 
-loss_move = {
+LOSS_MOVE = {
     'rock': 'scissors',
     'scissors': 'paper',
     'paper': 'rock'
 }
 
-win_move = {
+WIN_MOVE = {
     'rock': 'paper',
     'paper': 'scissors',
     'scissors': 'rock'
 }
 
-result_map = {
+GAME_RESULT_MAP = {
     'X': 'lose',
     'Y': 'draw',
     'Z': 'win'
@@ -44,14 +44,14 @@ result_map = {
 
 def move_for_result(opponent, result='win'):
     if result == 'win':
-        return win_move[opponent]
+        return WIN_MOVE[opponent]
     elif result == 'draw':
         return opponent
     else:
-        return loss_move[opponent]
+        return LOSS_MOVE[opponent]
 
 
-def winner(left, right):
+def game_result(left, right):
     if left == right:
         return 'draw'
 
@@ -68,28 +68,28 @@ def winner(left, right):
 def main():
     file_name = 'input.txt'
 
-    scores = []
+    part1_scores = []
+    part2_scores = []
     with open(file_name, 'r') as f:
         for line in f:
             line_content = line.strip().split(' ')
             left, right = line_content
 
-            left_move = left_key[left]
-
+            left_move = LEFT_KEY[left]
 
             # Part 1 gameplay
-            # right_move = right_key[right]
-            #scores.append(win_score[winner(left_move, right_move)] + play_score[right_move])
+            right_move = RIGHT_KEY[right]
+            part1_scores.append(WIN_SCORE[game_result(left_move, right_move)] + MOVE_SCORE[right_move])
 
             # Part 2 gameplay
-            expected_result = result_map[right]
+            expected_result = GAME_RESULT_MAP[right]
             right_move = move_for_result(left_move, expected_result)
 
-            scores.append(win_score[winner(left_move, right_move)] + play_score[right_move])
+            part2_scores.append(WIN_SCORE[game_result(left_move, right_move)] + MOVE_SCORE[right_move])
 
 
-
-    print(sum(scores))
+    print(f'Part 1 - Scores: {sum(part1_scores)}')
+    print(f'Part 2 - Scores: {sum(part2_scores)}')
 
 
 if __name__ == '__main__':
