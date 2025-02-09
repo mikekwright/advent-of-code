@@ -16,11 +16,7 @@ Years
 ------------------------------------
 
 * [2015](https://adventofcode.com/2015)
-
-
-
-
-
+* [2016](https://adventofcode.com/2016)
 
 Events
 ---------------------------
@@ -28,4 +24,3 @@ Events
 Advent of code has been running since 2015.
 
 [Advent of Code Events](https://adventofcode.com/events)
-
