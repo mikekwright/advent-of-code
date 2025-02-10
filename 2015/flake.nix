@@ -39,6 +39,7 @@
           # NixOS wiki on setting up python - https://nixos.wiki/wiki/Python
           python-config = pkgs.python3.withPackages (pypkgs: [
             pypkgs.click
+            pypkgs.pytest
           ]);
         in
         {
