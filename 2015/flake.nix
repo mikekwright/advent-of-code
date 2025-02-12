@@ -53,6 +53,7 @@
               (import (./day1/command.nix))
               (import (./day2/command.nix))
               (import (./day3/command.nix))
+              (import (./day4/command.nix))
             ];
 
             packages = [
